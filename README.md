@@ -14,15 +14,13 @@ flask --app main run --host=0.0.0.0
 Base url: `http://140.112.29.236:5000`
 
 ### /questions
-Return a random selected question.
+Return a random selected question from `data/questions.txt`.
 
 #### Example
 
-**Request**
+- Request: `base_url`/questions
+- Response:
 
-`base_url`/questions
-
-**Response**
 ```
 {
     "question": "Are you a morning shower person or an evening shower person?"
@@ -42,11 +40,8 @@ Return a recommended picture book based on user's response.
 
 #### Example
 
-**Request**
-
-`base_url`/questions?q=little+prince
-
-**Response**
+- Request: `base_url`/questions?q=little+prince
+- Response:
 ```
 {
     "epub_link": "https://archive.org/download/sleepingbeautyin00perriala/sleepingbeautyin00perriala.pub",
