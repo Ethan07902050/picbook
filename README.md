@@ -7,45 +7,21 @@ conda env create -f environment.yml
 
 ## Execution
 ```
-flask --app main run --host=0.0.0.0
+bash run_archiver.sh
+bash run_serve.sh
 ```
 
 ## API
-Base url: `http://140.112.29.236:5000`
+Base url: `https://140.112.29.226:8443`
 
-### /questions
-Return a random selected question from `data/questions.txt`.
-
-#### Example
-
-- Request: `base_url`/questions
-- Response:
-
-```
-{
-    "question": "Are you a morning shower person or an evening shower person?"
-}
-```
-
-### /search
+### /predictions/dpr
 Return a recommended picture book based on user's response.
 
+#### Method
+POST
+
 #### Parameter
-- `q`: user's query. Spaces should be replaced with '+'.
+- `body`: user's query.
 
 #### Response
 - `id`: unique identifier of the picture book.
-- `title`: title of the picture book.
-- `epub_link`: link to download the epub file. 
-
-#### Example
-
-- Request: `base_url`/questions?q=little+prince
-- Response:
-```
-{
-    "epub_link": "https://archive.org/download/sleepingbeautyin00perriala/sleepingbeautyin00perriala.pub",
-    "id": "sleepingbeautyin00perriala",
-    "title": "Sleeping beauty in the woods"
-}
-```
