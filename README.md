@@ -1,10 +1,5 @@
 # Picture Books Recommendation
 
-## Installation
-```
-conda env create -f environment.yml
-```
-
 ## Execution
 ```
 bash run_archiver.sh
